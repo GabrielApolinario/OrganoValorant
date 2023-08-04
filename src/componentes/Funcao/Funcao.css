@@ -1,0 +1,11 @@
+.funcao{
+    text-align: center;
+    padding: 32px;
+}
+
+.funcao h3{
+    font-size: 32px;
+    display: inline-block;
+    border-bottom: 4px solid;
+    padding-bottom: 8px;
+}
