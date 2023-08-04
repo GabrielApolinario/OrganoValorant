@@ -1,6 +1,7 @@
 import Formulario from './componentes/Formulario/Formulario';
 import Banner from './componentes/Banner/Banner';
-import Time from './componentes/Funcao'
+import Time from './componentes/Funcao/Index';
+import Footer from './componentes/Rodape/Index';
 import { useState } from 'react';
 
 function App() {
@@ -30,18 +31,25 @@ const listaFuncoes = [
   
 ]
 
-const [colaboradores, setColaboradores] = useState([])
-const aoNovoColaboradorAdicionado = (colaborador) => {
-  console.log(colaborador)
-  setColaboradores(colaborador)
+const [jogadores, setjogadores] = useState([])
+const aoNovoJogadorAdicionado = (jogador) => {
+  console.log(jogador)
+  setjogadores([...jogadores, jogador])
+
 }
 
   return (    
     <div className="App">      
       <Banner/>    
-      <Formulario funcoes={listaFuncoes.map(itemFuncao => itemFuncao.nome)} aoColaboradorCadastrado={novoColaborador => aoNovoColaboradorAdicionado(novoColaborador)}/> 
-      {listaFuncoes.map(itemFuncao => <Time key={itemFuncao.nome} nome={itemFuncao.nome} corPrimaria={itemFuncao.corPrimaria} corSecundaria={itemFuncao.corSecundaria}/>)}  
-      {/* (setColaboradores([...colaboradores, novoColaborador]))}/> */}
+      <Formulario funcoes={listaFuncoes.map(itemFuncao => itemFuncao.nome)} aoJogadorCadastrado={novoJogador => aoNovoJogadorAdicionado(novoJogador)}/> 
+      {listaFuncoes.map(itemFuncao => 
+        <Time 
+          key={itemFuncao.nome} 
+          nome={itemFuncao.nome} 
+          corPrimaria={itemFuncao.corPrimaria} 
+          corSecundaria={itemFuncao.corSecundaria}
+          jogadores={jogadores.filter(jogador => jogador.funcao == itemFuncao.nome)}/>)}
+      <Footer/>
     </div>
   );
 }

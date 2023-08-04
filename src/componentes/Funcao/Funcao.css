@@ -9,3 +9,10 @@
     border-bottom: 4px solid;
     padding-bottom: 8px;
 }
+
+.funcao .jogadores{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}

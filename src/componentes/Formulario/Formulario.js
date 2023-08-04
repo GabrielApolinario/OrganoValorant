@@ -36,14 +36,19 @@ const Formulario = (props) => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido')
+        //console.log('Form foi submetido')
         //console.log("Valores => ", nome, funcao, agente, foto)
-        props.aoColaboradorCadastrado({
-            nome,
-            funcao,
-            foto,
-            agente
-        })        
+        props.aoJogadorCadastrado({
+            nome: nome,
+            funcao: funcao,
+            foto: foto,
+            agente: agente
+        })
+
+        setNome('')
+        setFuncao('')
+        setAgente('')
+        setFoto('')
     }
 
     return (
