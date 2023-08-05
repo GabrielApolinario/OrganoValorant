@@ -32,8 +32,9 @@ const listaFuncoes = [
 ]
 
 const [jogadores, setjogadores] = useState([])
-const aoNovoJogadorAdicionado = (jogador) => {
-  console.log(jogador)
+  const aoNovoJogadorAdicionado = (jogador) => {
+  //debugger
+  //console.log(jogador)
   setjogadores([...jogadores, jogador])
 
 }

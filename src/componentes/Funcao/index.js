@@ -10,6 +10,8 @@ const Funcao = (props) => {
             <div className='jogadores'>
                 {props.jogadores.map(jogador =>
                     <Jogador
+                        corDeFundo={props.corPrimaria}
+                        key={jogador.nome}
                         nome={jogador.nome}
                         funcao={jogador.funcao}
                         foto={jogador.foto}
