@@ -2,7 +2,7 @@ import Formulario from './componentes/Formulario/Formulario.js';
 import Banner from './componentes/Banner/Banner.js';
 import Funcao from './componentes/Funcao/';
 import Footer from './componentes/Rodape/Index.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   
@@ -31,11 +31,32 @@ const listaFuncoes = [
   
 ]
 
+
+
 const [jogadores, setjogadores] = useState([])
+
+useEffect(() =>{
+  sessionStorage.setItem("cards", JSON.stringify(jogadores))
+  
+  // var cards = sessionStorage.getItem("cards")
+  // if(cards != null){
+  //   var a = JSON.stringify(cards);
+  //   var b = JSON.parse(a);
+  //   setjogadores([b])
+  // }
+  //var a = JSON.stringify(cards);
+  //var sessionJogadores = JSON.parse(a);
+  //console.log(sessionJogadores);
+  //sessionStorage.setItem("cards", jogadores)
+  //setjogadores([sessionJogadores])
+}, [jogadores])
+
   const aoNovoJogadorAdicionado = (jogador) => {
   //debugger
-  //console.log(jogador)
   setjogadores([...jogadores, jogador])
+  //sessionStorage.setItem("cards", JSON.stringify(jogadores))
+  //console.log(jogadores)
+  //var a = JSON.parse(sessionStorage.getItem("cards"))
 
 }
 
@@ -44,7 +65,7 @@ const [jogadores, setjogadores] = useState([])
       <Banner/>    
       <Formulario funcoes={listaFuncoes.map(itemFuncao => itemFuncao.nome)} aoJogadorCadastrado={novoJogador => aoNovoJogadorAdicionado(novoJogador)}/> 
       {listaFuncoes.map(itemFuncao => 
-        <Funcao 
+        jogadores != null && <Funcao 
           key={itemFuncao.nome} 
           nome={itemFuncao.nome} 
           corPrimaria={itemFuncao.corPrimaria} 
