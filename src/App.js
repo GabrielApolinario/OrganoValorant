@@ -1,7 +1,7 @@
-import Formulario from './componentes/Formulario/Formulario';
-import Banner from './componentes/Banner/Banner';
-import Funcao from './componentes/Funcao/Index';
-import Footer from './componentes/Rodape/Index';
+import Formulario from './componentes/Formulario/Formulario.js';
+import Banner from './componentes/Banner/Banner.js';
+import Funcao from './componentes/Funcao/Index.js';
+import Footer from './componentes/Rodape/Index.js';
 import { useState } from 'react';
 
 function App() {

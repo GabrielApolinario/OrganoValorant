@@ -1,4 +1,4 @@
-import Jogador from '../Jogador/Index'
+import Jogador from '../Jogador/Index.js'
 import './Funcao.css'
 
 const Funcao = (props) => {
