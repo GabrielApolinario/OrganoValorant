@@ -1,6 +1,6 @@
 import Formulario from './componentes/Formulario/Formulario';
 import Banner from './componentes/Banner/Banner';
-import Time from './componentes/Funcao/Index';
+import Funcao from './componentes/Funcao/Index';
 import Footer from './componentes/Rodape/Index';
 import { useState } from 'react';
 
@@ -44,7 +44,7 @@ const [jogadores, setjogadores] = useState([])
       <Banner/>    
       <Formulario funcoes={listaFuncoes.map(itemFuncao => itemFuncao.nome)} aoJogadorCadastrado={novoJogador => aoNovoJogadorAdicionado(novoJogador)}/> 
       {listaFuncoes.map(itemFuncao => 
-        <Time 
+        <Funcao 
           key={itemFuncao.nome} 
           nome={itemFuncao.nome} 
           corPrimaria={itemFuncao.corPrimaria} 
