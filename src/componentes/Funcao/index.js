@@ -8,14 +8,14 @@ const Funcao = (props) => {
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
 
             <div className='jogadores'>
-                {props.jogadores.map(jogador =>
+                {props.jogadores.map((jogador, indice) =>
                     <Jogador
                         corDeFundo={props.corPrimaria}
-                        key={jogador.nome}
-                        nome={jogador.nome}
-                        funcao={jogador.funcao}
+                        key={indice}
+                        nome={jogador.nome}                        
                         foto={jogador.foto}
-                        agente={jogador.agente} />
+                        agente={jogador.agente} 
+                        aoDeletar={props.aoDeletar}/>
 
                 )
                 }

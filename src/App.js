@@ -60,16 +60,22 @@ useEffect(() =>{
 
 }
 
+function deletarJogador(){
+  console.log('deletando jogador')
+}
+
   return (    
     <div className="App">      
       <Banner/>    
       <Formulario funcoes={listaFuncoes.map(itemFuncao => itemFuncao.nome)} aoJogadorCadastrado={novoJogador => aoNovoJogadorAdicionado(novoJogador)}/> 
       {listaFuncoes.map(itemFuncao => 
-        jogadores != null && <Funcao 
+        jogadores != null && 
+        <Funcao 
           key={itemFuncao.nome} 
           nome={itemFuncao.nome} 
           corPrimaria={itemFuncao.corPrimaria} 
           corSecundaria={itemFuncao.corSecundaria}
+          aoDeletar={deletarJogador}
           jogadores={jogadores.filter(jogador => jogador.funcao == itemFuncao.nome)}/>)}
       <Footer/>
     </div>

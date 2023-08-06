@@ -1,8 +1,10 @@
 import './Jogador.css'
+import {AiFillCloseCircle} from 'react-icons/ai'
 
-const Jogador = ({nome, funcao, foto, agente, corDeFundo}) =>{
+const Jogador = ({nome, foto, agente, corDeFundo, aoDeletar}) =>{
     return (
         <div className='jogador'>
+            <AiFillCloseCircle size={25} className='deletar' onClick={aoDeletar}/>
             <div className='cabecalho' style={{backgroundColor:corDeFundo}}>
                 <img src={foto} alt='imagem do jogador'/>
             </div>
